@@ -4,7 +4,7 @@ var result = document.getElementById("result");
 var buttons = document.querySelectorAll("button");
 
 function isOp(v) {
-  if (v == "X" || v == "/" || v == "+" || v == "-" || v == "*")
+  if (v == "*" || v == "/" || v == "+" || v == "-")
     return true;
   else
     return false;
@@ -15,9 +15,6 @@ for (var button of buttons) {
     var value = e.target.getAttribute("data-value");
     if (isOp(value) && isOp(result.innerHTML[result.innerHTML.length - 1])) {
       return;
-    }
-    if (value == "X") {
-      value = "*";
     }
     if (value != "=" && value != "C") {      
       result.innerHTML += value;
